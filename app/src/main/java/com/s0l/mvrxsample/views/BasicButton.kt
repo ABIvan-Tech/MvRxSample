@@ -3,7 +3,7 @@ package com.s0l.mvrxsample.views
 import android.content.Context
 import android.util.AttributeSet
 import android.widget.LinearLayout
-import com.airbnb.epoxy.CallbackProp
+import com.airbnb.epoxy.ModelProp
 import com.airbnb.epoxy.ModelView
 import com.airbnb.epoxy.TextProp
 import com.s0l.mvrxsample.databinding.BasicButtonBinding
@@ -26,7 +26,8 @@ class BasicButton @JvmOverloads constructor(
         binding.button.text = title
     }
 
-    @CallbackProp
+//    @CallbackProp
+    @ModelProp(ModelProp.Option.IgnoreRequireHashCode )
     fun setClickListener(listener: OnClickListener?) {
         binding.button.setOnClickListener(listener)
     }

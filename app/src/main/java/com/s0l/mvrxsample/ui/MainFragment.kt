@@ -3,9 +3,7 @@
 package com.s0l.mvrxsample.ui
 
 import android.annotation.SuppressLint
-import android.os.Bundle
 import android.view.Gravity
-import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -25,19 +23,6 @@ class MainFragment : Fragment(R.layout.main_fragment), MavericksView {
     private val binding: MainFragmentBinding by viewBinding()
     private val mainViewModel: MainViewModel by fragmentViewModel()
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        showData(mainViewModel.currentDate.value!!)
-
-        mainViewModel.currentDate.observe(viewLifecycleOwner, {
-            showData(it)
-        })
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        mainViewModel.startShowTime()
-    }
-
     private fun showData(date: Date) {
         binding.recyclerView.withModels {
             basicRow {
@@ -55,7 +40,7 @@ class MainFragment : Fragment(R.layout.main_fragment), MavericksView {
             basicButton {
                 id("button")
                 title(resources.getString(R.string.button))
-                clickListener { _ -> showToast(mainViewModel.currentDate.value) }
+                clickListener { _ -> showToast(date) }
             }
         }
     }
@@ -83,6 +68,6 @@ class MainFragment : Fragment(R.layout.main_fragment), MavericksView {
     }
 
     override fun invalidate() = withState(mainViewModel) { state ->
-        //Empty
+        showData(state.date)
     }
 }

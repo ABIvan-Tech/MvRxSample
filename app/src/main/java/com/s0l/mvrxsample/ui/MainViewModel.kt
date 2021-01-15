@@ -1,6 +1,5 @@
 package com.s0l.mvrxsample.ui
 
-import androidx.lifecycle.MutableLiveData
 import com.airbnb.mvrx.MavericksViewModel
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.cancelChildren
@@ -13,14 +12,16 @@ class MainViewModel(initialState: BaseState) : MavericksViewModel<BaseState>(ini
 
     private val jobTimer = Job()
 
-    var currentDate = MutableLiveData(Date())
+    init {
+        startShowTime()
+    }
 
     fun startShowTime() {
         viewModelScope.launch(jobTimer) {
             while (true){
                 delay(1000)
-                //setState { copy(date = Date()) }
-                currentDate.postValue(Date())
+                val date = Date()
+                setState { copy(date = date) }
             }
         }
     }
