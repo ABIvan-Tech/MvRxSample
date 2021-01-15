@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <merge xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="?attr/selectableItemBackground"
-    android:orientation="vertical"
     tools:parentTag="android.widget.LinearLayout">
-
-    <Space
-        android:layout_width="0dp"
-        android:layout_height="8dp" />
 
     <TextView
         android:id="@+id/button"
@@ -17,14 +9,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginTop="@dimen/padding_8dp"
+        android:layout_marginBottom="@dimen/padding_8dp"
         android:clickable="true"
         android:focusable="true"
         android:text="@string/button"
         android:textColor="@color/purple_700"
         android:textSize="18sp" />
-
-    <Space
-        android:layout_width="0dp"
-        android:layout_height="8dp" />
 
 </merge>
