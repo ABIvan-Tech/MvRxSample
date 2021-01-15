@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MvRxSample</string>
+    <string name="howrs">%02d hours</string>
+    <string name="minutes">%02d minutes</string>
+    <string name="seconds">%02d seconds</string>
+    <string name="button">Button</string>
+    <string name="current_time">Current time: %02d:%02d:%02d</string>
+
+</resources>
