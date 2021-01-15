@@ -16,7 +16,7 @@ class MainViewModel(initialState: BaseState) : MavericksViewModel<BaseState>(ini
         startShowTime()
     }
 
-    fun startShowTime() {
+    private fun startShowTime() {
         viewModelScope.launch(jobTimer) {
             while (true){
                 delay(1000)

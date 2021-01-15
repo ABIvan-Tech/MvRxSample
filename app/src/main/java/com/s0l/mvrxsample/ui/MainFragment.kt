@@ -27,15 +27,15 @@ class MainFragment : Fragment(R.layout.main_fragment), MavericksView {
         binding.recyclerView.withModels {
             basicRow {
                 id("hours")
-                title(resources.getString(R.string.howrs, date.hours))
+                title(resources.getQuantityString(R.plurals.hour, date.hours, date.hours))
             }
             basicRow {
                 id("minutes")
-                title(resources.getString(R.string.minutes, date.minutes))
+                title(resources.getQuantityString(R.plurals.minute, date.minutes, date.minutes))
             }
             basicRow {
                 id("seconds")
-                title(resources.getString(R.string.seconds, date.seconds))
+                title(resources.getQuantityString(R.plurals.second, date.seconds, date.seconds))
             }
             basicButton {
                 id("button")

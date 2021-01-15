@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="second">
+        <item quantity="one">%02d Секунда</item>
+        <item quantity="few">%02d Секунды</item>
+        <item quantity="other">%02d Секунд</item>
+        <item quantity="many">%02d Секунд</item>
+    </plurals>
+    <plurals name="minute">
+        <item quantity="one">%02d Минута</item>
+        <item quantity="few">%02d Минуты</item>
+        <item quantity="other">%02d Минут</item>
+        <item quantity="many">%02d Минут</item>
+    </plurals>
+    <plurals name="hour">
+        <item quantity="one">%02d Час</item>
+        <item quantity="few">%02d Часа</item>
+        <item quantity="other">%02d Часов</item>
+        <item quantity="many">%02d Часов</item>
+    </plurals>
+
+</resources>
